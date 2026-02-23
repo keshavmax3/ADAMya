@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Adamya's World 🌸</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating Flowers - Reduced count */
+        .flower {
+            position: fixed;
+            font-size: 2rem;
+            animation: float 20s infinite linear;
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.4;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            border: 3px solid #ff69b4;
+            animation: gentleFade 0.6s ease-out;
+        }
+
+        @keyframes gentleFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #ff1493;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #ff69b4;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .input-group {
+            margin: 20px 0;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: 3px solid #ffb6c1;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            text-align: center;
+            outline: none;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        input[type="text"]:focus {
+            border-color: #ff1493;
+            box-shadow: 0 0 15px rgba(255, 20, 147, 0.2);
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin: 10px;
+            box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 20, 147, 0.6);
+        }
+
+        .essay-box {
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
+            border-left: 5px solid #ff1493;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: left;
+            margin: 20px 0;
+            color: #555;
+            line-height: 2;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .essay-box p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .worm-emoji {
+            font-size: 3rem;
+            display: inline-block;
+            animation: gentleWiggle 3s ease-in-out infinite;
+        }
+
+        @keyframes gentleWiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        .physics-joke {
+            background: #ffe4e1;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 2px dashed #ff69b4;
+            color: #d63384;
+            font-style: italic;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .option-btn {
+            display: block;
+            width: 200px;
+            margin: 15px auto;
+            transition: all 0.3s ease;
+        }
+
+        .yes-btn {
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+        }
+
+        .no-btn {
+            background: linear-gradient(45deg, #666, #999);
+        }
+
+        .rating-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            font-size: 2.5rem;
+        }
+
+        .star {
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #ddd;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #ffd700;
+            transform: scale(1.2);
+        }
+
+        .error-msg {
+            color: #ff1493;
+            font-weight: 600;
+            margin-top: 10px;
+            animation: gentleShake 0.5s;
+        }
+
+        @keyframes gentleShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .signature {
+            font-family: 'Pacifico', cursive;
+            color: #ff1493;
+            font-size: 1.5rem;
+            margin-top: 30px;
+            text-align: right;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ffe4e1 0%, #ffb6c1 100%);
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+            color: #ff1493;
+        }
+
+        .quiz-container {
+            background: #fff9f0;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 2px solid #ffd700;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #ffe4e1;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff1493, #ff69b4);
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+
+        .spanish-word {
+            font-size: 1.8rem;
+            color: #ff1493;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="flowers-container"></div>
+
+    <div class="container">
+        <!-- Page 1: Italian Invention Question -->
+        <div id="page1" class="card">
+            <h1>🌸 Welcome Stranger! 🌸</h1>
+            <p style="font-size: 1.2rem; color: #ff69b4; font-weight: 600;">To enter Adamya's magical world, answer this:</p>
+            <h2>What was invented by Italians? 🇮🇹</h2>
+            <div class="input-group">
+                <input type="text" id="italian-answer" placeholder="Type your answer here..." onkeypress="if(event.key === 'Enter') checkItalian()">
+            </div>
+            <button class="btn" onclick="checkItalian()">Enter 🍕</button>
+            <div id="italian-error" class="error-msg hidden"></div>
+            <p style="margin-top: 20px; font-size: 0.9rem; color: #999;">Hint: It's delicious and round!</p>
+        </div>
+
+        <!-- Page 2: Who is Adamya - LONG ESSAY -->
+        <div id="page2" class="card hidden">
+            <h1>✨ Who is Adamya? ✨</h1>
+            <div class="essay-box">
+                <p style="text-align: center; font-size: 2rem; margin-bottom: 20px;">🎀 🐛 📚 🌶️ ✨</p>
+                
+                <p>
+                    In the vast cosmos of NEET aspirants, where caffeine flows like water and sleep is but a distant memory, there exists a legendary being known as <strong>Adamya</strong>. She is not merely a student; she is a phenomenon, a force of nature wrapped in a blanket of determination (and probably an actual blanket because the AC is always too cold).
+                </p>
+
+                <p>
+                    Our protagonist wakes up each morning with a dream in her heart and a textbook under her pillow. Her daily routine is a carefully choreographed dance between Biology diagrams, Chemical equations, and the eternal struggle of trying to remember what she studied five minutes ago. They say genius is 1% inspiration and 99% perspiration; Adamya has taken this literally and probably sweated through more practice papers than the average person has had hot dinners.
+                </p>
+
+                <p>
+                    But every hero needs a villain, and Adamya's arch-nemesis is none other than <span style="color: #ff0000; font-weight: bold; font-size: 1.2em;">PHYSICS</span>. Oh, Physics! That cruel mistress of vectors and velocities, of tensions and torques. While others see F=ma as a simple equation, Adamya sees it as a personal attack. Newton's laws? More like Newton's suggestions that she chooses to ignore. The three laws of motion might as well be three reasons why she questions her life choices at 2 AM.
+                </p>
+
+                <div class="physics-joke">
+                    <strong>Physics Fun Fact #1:</strong> Adamya's relationship with physics is like a parallel line - they never meet, no matter how far they extend! 📐❌
+                </div>
+
+                <div class="physics-joke">
+                    <strong>Physics Fun Fact #2:</strong> She believes projectile motion was invented specifically to ruin her day. "Why can't we just walk to the target?" she cries into the void. 🏹😭
+                </div>
+
+                <div class="physics-joke">
+                    <strong>Physics Fun Fact #3:</strong> According to the law of conservation of energy, energy cannot be created or destroyed. Adamya is living proof that it can, however, be converted entirely into existential dread. ⚡😰
+                </div>
+
+                <p>
+                    In moments of profound stress (which is approximately every Tuesday, Thursday, and also weekends), Adamya has been known to declare, <em>"I'm just a worm."</em> Now, one might ask: why a worm? Is it the graceful way they burrow through soil, avoiding the harsh light of day much like she avoids physics numericals? Is it their simple existence, free from the burden of entrance exams? Or perhaps it's because worms have no spinal cord, and after hours of hunching over books, neither does she? The world may never know, but the nickname has stuck like a particularly stubborn physics formula.
+                </p>
+
+                <div style="text-align: center; margin: 20px 0;">
+                    <div class="worm-emoji">🐛</div>
+                    <p style="text-align: center; margin-top: 10px; font-size: 0.9rem; color: #999;">
+                        <em>Artist's impression of Adamya during Physics class. Note the complete absence of stress (this is sarcasm).</em>
+                    </p>
+                </div>
+
+                <p>
+                    Let us now discuss the <span class="highlight">Chatpati</span> phenomenon. In a world of aesthetic profile pictures - sunsets, coffee cups, carefully curated selfies - Adamya stands defiant with her iconic chatpati display picture. Is it a snack? Is it a lifestyle? Is it a metaphor for her spicy personality and ability to add flavor to any conversation? Yes. Yes to all of it. The chatpati is not just a profile picture; it is a brand, a statement, a way of life. While others change their display pictures with the seasons, Adamya's chatpati remains eternal, much like her love-hate relationship with NCERT textbooks.
+                </p>
+
+                <p>
+                    There have been whispers, rumors, hushed conversations in the corridors of coaching centers, that Adamya is considering changing her profile picture. "Maybe something more aesthetic," they say. "Maybe something that doesn't make people hungry at 3 AM," they suggest. But we know the truth: the chatpati is forever. You cannot improve upon perfection. You do not replace an icon. The chatpati stays.
+                </p>
+
+                <p>
+                    Her study habits are the stuff of legend. They say she can highlight an entire textbook in neon yellow and still claim "I haven't studied anything." Her notes are a beautiful chaos of colors, arrows, and margin doodles that would make Picasso weep with joy. She has perfected the art of "productive procrastination" - organizing her study schedule for three hours instead of actually studying. Her highlighters have highlighters. Her to-do lists have to-do lists.
+                </p>
+
+                <p>
+                    When it comes to Biology, Adamya is in her element. The Krebs cycle? More like the Fun cycle (okay, maybe not, but she tries). She can name all the bones in the human body and has strong opinions about which ones are the most unnecessarily difficult to spell. Chemistry is her middle ground - sometimes friends, sometimes foes, always requiring the memorization of colors that make no logical sense (why is copper sulfate blue? Because chemistry said so, that's why).
+                </p>
+
+                <p>
+                    But oh, when the Physics teacher walks in, the atmosphere changes. The lights dim (metaphorically, the electricity bill is already too high). Birds stop singing. Somewhere in the distance, a dog howls. Adamya assumes the position: head in hands, spirit broken, wondering if it's too late to become a professional worm instead. She has calculated the exact velocity with which she would like to throw her physics textbook out the window, but alas, that would require using physics, and we simply don't do that here.
+                </p>
+
+                <p>
+                    Despite all this, Adamya persists. She is the worm that turned, the chatpati that spiced up our lives, the physics-hating, biology-loving, chemistry-tolerating future doctor who reminds us all that it's okay to struggle, it's okay to call yourself a worm sometimes, and it's definitely okay to keep a snack as your profile picture for way longer than socially acceptable.
+                </p>
+
+                <p style="text-align: center; font-weight: 600; color: #ff1493; margin-top: 30px; font-size: 1.2rem; line-height: 1.8;">
+                    In summary: Future doctor, current worm, eternal hater of F=ma, CEO of Chatpati Energy, professional highlighter wielder, and the only person who can make "I'm a worm" sound like both a cry for help and a badge of honor. We stan a legend. 🚀✨
+                </p>
+
+                <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #999;">
+                    P.S. If you're reading this, Adamya, go drink some water and touch grass. The books will wait. Probably. Okay, maybe not, but your sanity is important too! 💕
+                </p>
+            </div>
+            <button class="btn" onclick="goToPage3()">Continue to Spanish Quiz 🌮</button>
+        </div>
+
+        <!-- Page 3: Spanish Question with Growing YES -->
+        <div id="page3" class="card hidden">
+            <h1>🇪🇸 Spanish Check! 🇪🇸</h1>
+            <p style="font-size: 1.2rem;">Are you learning Spanish, Adamya?</p>
+            <p style="font-size: 0.9rem; color: #999; margin-top: 10px;">Be honest... or face the consequences 😏</p>
+            <div style="margin-top: 30px; min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <button id="btn-yes" class="btn option-btn yes-btn" onclick="handleSpanish(true)">YES ✅</button>
+                <button id="btn-no" class="btn option-btn no-btn" onclick="handleSpanish(false)">NO ❌</button>
+            </div>
+            <div id="trick-message" style="margin-top: 20px; color: #ff1493; font-weight: 600; min-height: 30px;"></div>
+        </div>
+
+        <!-- Page 4: Spanish Quiz -->
+        <div id="page4" class="card hidden">
+            <h1>🎯 Spanish Quiz Time!</h1>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-bar" style="width: 0%"></div>
+            </div>
+            <p>Question <span id="question-num">1</span> of 4</p>
+            
+            <div class="quiz-container">
+                <p>Translate this Spanish phrase:</p>
+                <div class="spanish-word" id="spanish-phrase">"Yo bebo agua"</div>
+                <div class="input-group">
+                    <input type="text" id="quiz-answer" placeholder="Your answer..." onkeypress="if(event.key === 'Enter') checkQuizAnswer()">
+                </div>
+                <button class="btn" onclick="checkQuizAnswer()">Submit Answer ✨</button>
+                <div id="quiz-error" class="error-msg hidden"></div>
+                <div id="quiz-hint" style="margin-top: 10px; color: #999; font-size: 0.9rem;"></div>
+            </div>
+        </div>
+
+        <!-- Page 5: Rating -->
+        <div id="page5" class="card hidden">
+            <h1>⭐ Rate This Website! ⭐</h1>
+            <p>How would you rate this masterpiece dedicated to you?</p>
+            <div class="rating-container" id="rating-stars">
+                <span class="star" onclick="setRating(1)">⭐</span>
+                <span class="star" onclick="setRating(2)">⭐</span>
+                <span class="star" onclick="setRating(3)">⭐</span>
+                <span class="star" onclick="setRating(4)">⭐</span>
+                <span class="star" onclick="setRating(5)">⭐</span>
+            </div>
+            <p id="rating-text" style="color: #ff69b4; font-weight: 600; height: 30px;"></p>
+            <button class="btn hidden" id="submit-rating-btn" onclick="submitRating()">Submit Rating 🎉</button>
+        </div>
+
+        <!-- Page 6: Thank You -->
+        <div id="page6" class="card hidden">
+            <h1>🌸 Thank You! 🌸</h1>
+            <div style="font-size: 4rem; margin: 20px 0;">🙏</div>
+            <p style="font-size: 1.2rem;">Thanks for visiting!</p>
+            <div class="signature">
+                Thanking you,<br>
+                Yours lovingly,<br>
+                Modi Ji 🇮🇳
+            </div>
+            <div style="margin-top: 30px; padding: 20px; background: #ffe4e1; border-radius: 15px;">
+                <p style="color: #ff1493; font-weight: 600;">P.S. Physics still sucks, right? 😄</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating flowers - reduced count
+        function createFlowers() {
+            const container = document.getElementById('flowers-container');
+            const flowers = ['🌸', '🌺', '🌷', '🌹', '🌻'];
+            
+            for (let i = 0; i < 8; i++) {
+                const flower = document.createElement('div');
+                flower.className = 'flower';
+                flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+                flower.style.left = Math.random() * 100 + 'vw';
+                flower.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                flower.style.animationDelay = Math.random() * 10 + 's';
+                flower.style.fontSize = (Math.random() * 1 + 1.5) + 'rem';
+                container.appendChild(flower);
+            }
+        }
+
+        createFlowers();
+
+        let currentRating = 0;
+        let yesButtonScale = 1;
+        let noClickCount = 0;
+        let currentQuestion = 0;
+
+        const quizQuestions = [
+            {
+                spanish: "Yo bebo agua",
+                answer: ["i drink water", "i am drinking water"],
+                hint: "It's something you do when you're thirsty 💧"
+            },
+            {
+                spanish: "Hola, ¿cómo estás?",
+                answer: ["hello how are you", "hi how are you"],
+                hint: "A common greeting 👋"
+            },
+            {
+                spanish: "Me llamo Adamya",
+                answer: ["my name is adamya", "i am called adamya", "i'm adamya"],
+                hint: "Introducing yourself 🙋‍♀️"
+            },
+            {
+                spanish: "Gracias",
+                answer: ["thank you", "thanks"],
+                hint: "You say this when someone does something nice 🙏"
+            }
+        ];
+
+        function checkItalian() {
+            const answer = document.getElementById('italian-answer').value.toLowerCase().trim();
+            const errorDiv = document.getElementById('italian-error');
+            
+            if (answer === 'pizza') {
+                document.getElementById('page1').classList.add('hidden');
+                document.getElementById('page2').classList.remove('hidden');
+            } else {
+                errorDiv.textContent = "Wrong! Try again! Hint: It's cheesy and delicious 🍕";
+                errorDiv.classList.remove('hidden');
+                setTimeout(() => {
+                    errorDiv.classList.add('hidden');
+                }, 3000);
+            }
+        }
+
+        function goToPage3() {
+            document.getElementById('page2').classList.add('hidden');
+            document.getElementById('page3').classList.remove('hidden');
+        }
+
+        function handleSpanish(isYes) {
+            const yesBtn = document.getElementById('btn-yes');
+            const noBtn = document.getElementById('btn-no');
+            const msgDiv = document.getElementById('trick-message');
+            
+            if (!isYes) {
+                noClickCount++;
+                yesButtonScale += 0.2;
+                
+                // Grow the YES button
+                yesBtn.style.transform = `scale(${yesButtonScale})`;
+                yesBtn.style.margin = `${10 * yesButtonScale}px auto`;
+                
+                // Shrink and fade the NO button slightly
+                const noScale = Math.max(0.6, 1 - (noClickCount * 0.15));
+                noBtn.style.transform = `scale(${noScale})`;
+                noBtn.style.opacity = Math.max(0.4, 1 - (noClickCount * 0.15));
+                
+                // Funny messages
+                const messages = [
+                    "Nice try! But YES is getting bigger! 😏",
+                    "The YES button is growing... 🌱",
+                    "You can't escape Spanish! 🇪🇸",
+                    "YES is becoming unstoppable! 💪",
+                    "Just give up and click YES! 😂",
+                    "Look at that giant YES button! 👀",
+                    "Resistance is futile! 🚀"
+                ];
+                
+                msgDiv.textContent = messages[Math.min(noClickCount - 1, messages.length - 1)];
+                
+                // If clicked too many times, make NO button run away
+                if (noClickCount >= 5) {
+                    noBtn.style.position = 'relative';
+                    noBtn.style.left = (Math.random() * 100 - 50) + 'px';
+                    noBtn.style.top = (Math.random() * 50 - 25) + 'px';
+                    msgDiv.textContent = "Catch me if you can! 😜";
+                }
+            } else {
+                document.getElementById('page3').classList.add('hidden');
+                document.getElementById('page4').classList.remove('hidden');
+                loadQuestion();
+            }
+        }
+
+        function loadQuestion() {
+            const q = quizQuestions[currentQuestion];
+            document.getElementById('spanish-phrase').textContent = `"${q.spanish}"`;
+            document.getElementById('quiz-answer').value = '';
+            document.getElementById('question-num').textContent = currentQuestion + 1;
+            document.getElementById('quiz-hint').textContent = `Hint: ${q.hint}`;
+            document.getElementById('quiz-error').classList.add('hidden');
+            
+            // Update progress bar
+            const progress = ((currentQuestion) / quizQuestions.length) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+        }
+
+        function checkQuizAnswer() {
+            const answer = document.getElementById('quiz-answer').value.toLowerCase().trim();
+            const q = quizQuestions[currentQuestion];
+            const errorDiv = document.getElementById('quiz-error');
+            
+            const isCorrect = q.answer.some(a => answer.includes(a));
+            
+            if (isCorrect) {
+                currentQuestion++;
+                if (currentQuestion < quizQuestions.length) {
+                    loadQuestion();
+                } else {
+                    // Quiz complete
+                    document.getElementById('progress-bar').style.width = '100%';
+                    setTimeout(() => {
+                        document.getElementById('page4').classList.add('hidden');
+                        document.getElementById('page5').classList.remove('hidden');
+                    }, 500);
+                }
+            } else {
+                errorDiv.textContent = "Not quite! Try again! 💭";
+                errorDiv.classList.remove('hidden');
+                setTimeout(() => {
+                    errorDiv.classList.add('hidden');
+                }, 3000);
+            }
+        }
+
+        function setRating(rating) {
+            currentRating = rating;
+            const stars = document.querySelectorAll('.star');
+            const texts = ['Terrible 😢', 'Bad 😕', 'Okay 😐', 'Good 🙂', 'Amazing! 🤩'];
+            
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+            
+            document.getElementById('rating-text').textContent = texts[rating - 1];
+            document.getElementById('submit-rating-btn').classList.remove('hidden');
+        }
+
+        function submitRating() {
+            console.log('Adamya rated the website:', currentRating, 'stars');
+            
+            const ratingData = {
+                user: 'Adamya',
+                rating: currentRating,
+                timestamp: new Date().toLocaleString(),
+                message: 'Website rating received!'
+            };
+            
+            localStorage.setItem('adamya_rating', JSON.stringify(ratingData));
+            alert(`Rating submitted! Adamya gave ${currentRating} stars! ⭐`);
+            
+            document.getElementById('page5').classList.add('hidden');
+            document.getElementById('page6').classList.remove('hidden');
+        }
+
+        window.onload = function() {
+            const stored = localStorage.getItem('adamya_rating');
+            if (stored) {
+                console.log('Previous rating found:', JSON.parse(stored));
+            }
+        };
+    </script>
+</body>
+</html>
