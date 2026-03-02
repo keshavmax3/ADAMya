@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Adamya's World 🌸</title>
+    <title>Adamya's World</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap');
         
         * {
             margin: 0;
@@ -15,18 +15,18 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 50%, #ffdde1 100%);
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
+            color: #4a4a4a;
         }
 
-        /* Floating Flowers - Reduced count */
-        .flower {
+        .petal {
             position: fixed;
-            font-size: 2rem;
+            font-size: 1.5rem;
             animation: float 20s infinite linear;
-            opacity: 0.4;
+            opacity: 0.3;
             pointer-events: none;
             z-index: 0;
         }
@@ -37,10 +37,10 @@
                 opacity: 0;
             }
             10% {
-                opacity: 0.4;
+                opacity: 0.3;
             }
             90% {
-                opacity: 0.4;
+                opacity: 0.3;
             }
             100% {
                 transform: translateY(-100vh) rotate(360deg);
@@ -64,12 +64,12 @@
         .card {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 30px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+            padding: 50px;
+            box-shadow: 0 15px 50px rgba(238, 156, 167, 0.3);
             text-align: center;
             width: 100%;
-            max-width: 600px;
-            border: 3px solid #ff69b4;
+            max-width: 650px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
             animation: gentleFade 0.6s ease-out;
         }
 
@@ -86,148 +86,248 @@
 
         h1 {
             font-family: 'Pacifico', cursive;
-            color: #ff1493;
-            font-size: 2.5rem;
+            color: #e91e63;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
         h2 {
-            color: #ff69b4;
+            color: #d81b60;
             margin-bottom: 20px;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
+            font-weight: 500;
         }
 
         p {
-            color: #666;
-            line-height: 1.6;
+            color: #555;
+            line-height: 1.7;
             margin-bottom: 20px;
             font-size: 1.1rem;
         }
 
         .input-group {
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         input[type="text"] {
             width: 100%;
-            padding: 15px;
-            border: 3px solid #ffb6c1;
+            padding: 18px 30px;
+            border: 3px solid #f8bbd9;
             border-radius: 50px;
             font-size: 1.1rem;
             text-align: center;
             outline: none;
             transition: all 0.3s;
             font-family: 'Poppins', sans-serif;
+            background: #fff5f8;
+            color: #4a4a4a;
         }
 
         input[type="text"]:focus {
-            border-color: #ff1493;
-            box-shadow: 0 0 15px rgba(255, 20, 147, 0.2);
+            border-color: #e91e63;
+            box-shadow: 0 0 20px rgba(233, 30, 99, 0.2);
         }
 
         .btn {
-            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            background: linear-gradient(45deg, #e91e63, #f06292);
             color: white;
             border: none;
-            padding: 15px 40px;
-            font-size: 1.2rem;
+            padding: 16px 45px;
+            font-size: 1.15rem;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             margin: 10px;
-            box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+            box-shadow: 0 5px 20px rgba(233, 30, 99, 0.4);
         }
 
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 20, 147, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(233, 30, 99, 0.5);
         }
 
-        .essay-box {
-            background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
-            border-left: 5px solid #ff1493;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: left;
-            margin: 20px 0;
-            color: #555;
-            line-height: 2;
-            max-height: 60vh;
-            overflow-y: auto;
+        .option-btn {
+            display: block;
+            width: 220px;
+            margin: 15px auto;
+            transition: all 0.3s ease;
         }
 
-        .essay-box p {
-            margin-bottom: 15px;
-            text-align: justify;
+        .yes-btn {
+            background: linear-gradient(45deg, #e91e63, #f06292);
+            position: relative;
+            overflow: visible;
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
         }
 
-        .worm-emoji {
-            font-size: 3rem;
-            display: inline-block;
-            animation: gentleWiggle 3s ease-in-out infinite;
+        .yes-face {
+            position: relative;
+            width: 50px;
+            height: 35px;
+            margin-bottom: 2px;
         }
 
-        @keyframes gentleWiggle {
-            0%, 100% { transform: rotate(-3deg); }
-            50% { transform: rotate(3deg); }
+        .eye {
+            position: absolute;
+            width: 12px;
+            height: 14px;
+            background: white;
+            border-radius: 50%;
+            top: 5px;
+            transition: all 0.1s ease;
         }
 
-        .physics-joke {
-            background: #ffe4e1;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-            border: 2px dashed #ff69b4;
-            color: #d63384;
-            font-style: italic;
+        .eye.left { left: 8px; }
+        .eye.right { right: 8px; }
+
+        .pupil {
+            position: absolute;
+            width: 6px;
+            height: 7px;
+            background: #333;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.05s ease;
+        }
+
+        .mouth {
+            position: absolute;
+            width: 24px;
+            height: 10px;
+            border-bottom: 3px solid white;
+            border-radius: 0 0 24px 24px;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.3s ease;
+        }
+
+        .mouth.sad {
+            border-bottom: none;
+            border-top: 3px solid white;
+            border-radius: 24px 24px 0 0;
+            bottom: 2px;
+        }
+
+        .mouth.very-sad {
+            border-bottom: none;
+            border-top: 3px solid white;
+            border-radius: 50% 50% 0 0;
+            width: 16px;
+            height: 12px;
+            bottom: 0;
+        }
+
+        .tear {
+            position: absolute;
+            width: 4px;
+            height: 7px;
+            background: #81d4fa;
+            border-radius: 50%;
+            top: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tear.left { left: 5px; }
+        .tear.right { right: 5px; }
+
+        .tear.show {
+            opacity: 1;
+            animation: tearDrop 1s infinite;
+        }
+
+        @keyframes tearDrop {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(2px); }
+        }
+
+        .yes-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .no-btn {
+            background: linear-gradient(45deg, #757575, #9e9e9e);
         }
 
         .hidden {
             display: none !important;
         }
 
-        .option-btn {
-            display: block;
-            width: 200px;
-            margin: 15px auto;
-            transition: all 0.3s ease;
+        .quiz-container {
+            background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 25px 0;
+            border: 2px solid #f8bbd9;
         }
 
-        .yes-btn {
-            background: linear-gradient(45deg, #ff1493, #ff69b4);
-        }
-
-        .no-btn {
-            background: linear-gradient(45deg, #666, #999);
-        }
-
-        .rating-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #fce4ec;
+            border-radius: 10px;
             margin: 20px 0;
-            font-size: 2.5rem;
+            overflow: hidden;
         }
 
-        .star {
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #e91e63, #f06292);
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+
+        .mcq-option {
+            display: block;
+            width: 100%;
+            padding: 16px 22px;
+            margin: 10px 0;
+            background: #fff;
+            border: 2px solid #f8bbd9;
+            border-radius: 15px;
             cursor: pointer;
-            transition: all 0.2s;
-            color: #ddd;
+            transition: all 0.3s ease;
+            text-align: left;
+            font-size: 1rem;
+            color: #4a4a4a;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .star:hover,
-        .star.active {
-            color: #ffd700;
-            transform: scale(1.2);
+        .mcq-option:hover {
+            background: #fff5f8;
+            border-color: #e91e63;
+            transform: translateX(5px);
+        }
+
+        .mcq-option.correct {
+            background: #c8e6c9;
+            border-color: #66bb6a;
+            color: #2e7d32;
+        }
+
+        .mcq-option.wrong {
+            background: #ffcdd2;
+            border-color: #ef5350;
+            color: #c62828;
         }
 
         .error-msg {
-            color: #ff1493;
+            color: #e91e63;
             font-weight: 600;
-            margin-top: 10px;
+            margin-top: 12px;
             animation: gentleShake 0.5s;
         }
 
@@ -237,76 +337,275 @@
             75% { transform: translateX(5px); }
         }
 
+        .essay-box {
+            background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 100%);
+            border-left: 4px solid #e91e63;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: left;
+            margin: 20px 0;
+            color: #555;
+            line-height: 2;
+            max-height: 55vh;
+            overflow-y: auto;
+            font-size: 1rem;
+        }
+
+        .essay-box p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+
+        .physics-joke {
+            background: #ffe6f0;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-left: 3px solid #e91e63;
+            color: #ad1457;
+            font-style: italic;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ffe6f0 0%, #f8bbd9 100%);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #e91e63;
+        }
+
+        .back-pain-box {
+            background: linear-gradient(135deg, #ffe6f0 0%, #fff0f3 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #e91e63;
+        }
+
+        .worm-emoji {
+            font-size: 2.5rem;
+            display: inline-block;
+            animation: gentleWiggle 3s ease-in-out infinite;
+        }
+
+        @keyframes gentleWiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        .final-score-card {
+            background: linear-gradient(135deg, #e91e63, #f06292);
+            color: white;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .final-score-card h2 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .final-score-card .score-number {
+            font-size: 5rem;
+            font-weight: 700;
+            margin: 20px 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+        }
+
+        .performance-msg {
+            font-size: 1.3rem;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+        }
+
         .signature {
             font-family: 'Pacifico', cursive;
-            color: #ff1493;
-            font-size: 1.5rem;
+            color: #e91e63;
+            font-size: 1.6rem;
             margin-top: 30px;
             text-align: right;
         }
 
-        .highlight {
-            background: linear-gradient(120deg, #ffe4e1 0%, #ffb6c1 100%);
-            padding: 2px 8px;
-            border-radius: 5px;
-            font-weight: 600;
-            color: #ff1493;
+        .hint-text {
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 15px;
         }
 
-        .quiz-container {
-            background: #fff9f0;
+        .trick-message {
+            margin-top: 20px;
+            color: #e91e63;
+            font-weight: 600;
+            min-height: 30px;
+            font-size: 1rem;
+        }
+
+        .quiz-feedback {
+            margin-top: 15px;
+            font-weight: 600;
+            min-height: 30px;
+            font-size: 1.1rem;
+        }
+
+        .category-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #ffe6f0;
+            border-radius: 20px;
+            color: #e91e63;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .question-type-indicator {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .gatekeeper-msg {
+            background: #ffe6f0;
             padding: 20px;
             border-radius: 15px;
-            margin: 20px 0;
-            border: 2px solid #ffd700;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 10px;
-            background: #ffe4e1;
-            border-radius: 10px;
-            margin: 20px 0;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #ff1493, #ff69b4);
-            transition: width 0.5s ease;
-            border-radius: 10px;
-        }
-
-        .spanish-word {
-            font-size: 1.8rem;
-            color: #ff1493;
-            font-weight: 700;
-            margin: 15px 0;
+            margin-top: 20px;
+            border: 2px dashed #e91e63;
+            color: #ad1457;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
-    <div id="flowers-container"></div>
+    <div id="petals-container"></div>
 
     <div class="container">
-        <!-- Page 1: Italian Invention Question -->
+        <!-- Page 1: Rajma Gate -->
         <div id="page1" class="card">
-            <h1>🌸 Welcome Stranger! 🌸</h1>
-            <p style="font-size: 1.2rem; color: #ff69b4; font-weight: 600;">To enter Adamya's magical world, answer this:</p>
-            <h2>What was invented by Italians? 🇮🇹</h2>
+            <h1>Hold Up!</h1>
+            <p style="font-size: 1.2rem; color: #d81b60; font-weight: 500;">Only Adamya can enter. Prove it:</p>
+            <h2>What is Adamya's favourite daal?</h2>
             <div class="input-group">
-                <input type="text" id="italian-answer" placeholder="Type your answer here..." onkeypress="if(event.key === 'Enter') checkItalian()">
+                <input type="text" id="rajma-answer" placeholder="Type your answer..." onkeypress="if(event.key === 'Enter') checkRajma()">
             </div>
-            <button class="btn" onclick="checkItalian()">Enter 🍕</button>
-            <div id="italian-error" class="error-msg hidden"></div>
-            <p style="margin-top: 20px; font-size: 0.9rem; color: #999;">Hint: It's delicious and round!</p>
+            <button class="btn" onclick="checkRajma()">Enter</button>
+            <div id="rajma-error" class="error-msg hidden"></div>
+            <div id="gatekeeper-msg" class="gatekeeper-msg hidden">
+                Nice try, but you're not Adamya. Adamya would know this in her sleep. Try again! 😏
+            </div>
+            <p class="hint-text">Hint: It's red and loves rice</p>
         </div>
 
-        <!-- Page 2: Who is Adamya - LONG ESSAY -->
+        <!-- Page 2: Spanish Check with YES Face (FACE ABOVE TEXT) -->
         <div id="page2" class="card hidden">
-            <h1>✨ Who is Adamya? ✨</h1>
+            <h1>Spanish Check</h1>
+            <p style="font-size: 1.2rem;">Are you learning Spanish?</p>
+            <p style="font-size: 0.95rem; color: #777; margin-top: 10px;">Be honest...</p>
+            <div style="margin-top: 30px; min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <button id="btn-yes" class="btn option-btn yes-btn" onclick="handleSpanish(true)">
+                    <div class="yes-face">
+                        <div class="eye left"><div class="pupil"></div></div>
+                        <div class="eye right"><div class="pupil"></div></div>
+                        <div class="mouth" id="yes-mouth"></div>
+                        <div class="tear left" id="tear-left"></div>
+                        <div class="tear right" id="tear-right"></div>
+                    </div>
+                    <div class="yes-text">YES</div>
+                </button>
+                <button id="btn-no" class="btn option-btn no-btn" onclick="handleSpanish(false)">NO</button>
+            </div>
+            <div id="trick-message" class="trick-message"></div>
+        </div>
+
+        <!-- Page 3: Olympiad Level Warning -->
+        <div id="page3" class="card hidden">
+            <h1>Ready?</h1>
+            <p style="font-size: 1.3rem; color: #d81b60; font-weight: 500;">Olympiad level questions coming up!</p>
+            <p style="font-size: 1.1rem;">This ain't easy. You gotta attempt all three categories.<br>No escape. 😈</p>
+            <div style="margin: 30px 0; font-size: 3rem;">🧠⚡📚</div>
+            <button class="btn" onclick="startSpanish()">Bring It On!</button>
+        </div>
+
+        <!-- Page 4: Spanish Quiz (Mixed) -->
+        <div id="page4" class="card hidden">
+            <span class="category-tag">Spanish Quiz</span>
+            <h2 style="margin-top: 10px;">Question <span id="spanish-qnum">1</span> of 15</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="spanish-progress" style="width: 0%"></div>
+            </div>
+            <div id="spanish-type" class="question-type-indicator"></div>
+            
+            <div class="quiz-container">
+                <p id="spanish-question" style="font-size: 1.2rem; font-weight: 600; color: #4a4a4a; margin-bottom: 25px; line-height: 1.5;">Question here?</p>
+                <div id="spanish-options"></div>
+                <div id="spanish-input-area" class="hidden">
+                    <input type="text" id="spanish-subjective" placeholder="Type your answer..." onkeypress="if(event.key === 'Enter') checkSpanishSubjective()">
+                    <button class="btn" onclick="checkSpanishSubjective()" style="margin-top: 15px;">Submit</button>
+                </div>
+                <div id="spanish-error" class="error-msg hidden"></div>
+                <div id="spanish-feedback" class="quiz-feedback"></div>
+            </div>
+            
+            <button class="btn hidden" id="spanish-next" onclick="nextSpanish()">Next</button>
+        </div>
+
+        <!-- Page 5: Alice Quiz (Mixed) -->
+        <div id="page5" class="card hidden">
+            <span class="category-tag">Alice in Borderland</span>
+            <h2 style="margin-top: 10px;">Question <span id="alice-qnum">1</span> of 20</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="alice-progress" style="width: 0%"></div>
+            </div>
+            <div id="alice-type" class="question-type-indicator"></div>
+            
+            <div class="quiz-container">
+                <p id="alice-question" style="font-size: 1.2rem; font-weight: 600; color: #4a4a4a; margin-bottom: 25px; line-height: 1.5;">Question here?</p>
+                <div id="alice-options"></div>
+                <div id="alice-input-area" class="hidden">
+                    <input type="text" id="alice-subjective" placeholder="Type your answer..." onkeypress="if(event.key === 'Enter') checkAliceSubjective()">
+                    <button class="btn" onclick="checkAliceSubjective()" style="margin-top: 15px;">Submit</button>
+                </div>
+                <div id="alice-error" class="error-msg hidden"></div>
+                <div id="alice-feedback" class="quiz-feedback"></div>
+            </div>
+            
+            <button class="btn hidden" id="alice-next" onclick="nextAlice()">Next</button>
+        </div>
+
+        <!-- Page 6: Gone Girl Quiz (Mixed) -->
+        <div id="page6" class="card hidden">
+            <span class="category-tag">Gone Girl</span>
+            <h2 style="margin-top: 10px;">Question <span id="gone-qnum">1</span> of 20</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="gone-progress" style="width: 0%"></div>
+            </div>
+            <div id="gone-type" class="question-type-indicator"></div>
+            
+            <div class="quiz-container">
+                <p id="gone-question" style="font-size: 1.2rem; font-weight: 600; color: #4a4a4a; margin-bottom: 25px; line-height: 1.5;">Question here?</p>
+                <div id="gone-options"></div>
+                <div id="gone-input-area" class="hidden">
+                    <input type="text" id="gone-subjective" placeholder="Type your answer..." onkeypress="if(event.key === 'Enter') checkGoneSubjective()">
+                    <button class="btn" onclick="checkGoneSubjective()" style="margin-top: 15px;">Submit</button>
+                </div>
+                <div id="gone-error" class="error-msg hidden"></div>
+                <div id="gone-feedback" class="quiz-feedback"></div>
+            </div>
+            
+            <button class="btn hidden" id="gone-next" onclick="nextGone()">Next</button>
+        </div>
+
+        <!-- Page 7: The Essay (After all quizzes) -->
+        <div id="page7" class="card hidden">
+            <h1>Who is Adamya?</h1>
             <div class="essay-box">
-                <p style="text-align: center; font-size: 2rem; margin-bottom: 20px;">🎀 🐛 📚 🌶️ ✨</p>
+                <p style="text-align: center; font-size: 2rem; margin-bottom: 20px;">✨ 🐛 ✨</p>
                 
                 <p>
                     In the vast cosmos of NEET aspirants, where caffeine flows like water and sleep is but a distant memory, there exists a legendary being known as <strong>Adamya</strong>. She is not merely a student; she is a phenomenon, a force of nature wrapped in a blanket of determination (and probably an actual blanket because the AC is always too cold).
@@ -317,19 +616,19 @@
                 </p>
 
                 <p>
-                    But every hero needs a villain, and Adamya's arch-nemesis is none other than <span style="color: #ff0000; font-weight: bold; font-size: 1.2em;">PHYSICS</span>. Oh, Physics! That cruel mistress of vectors and velocities, of tensions and torques. While others see F=ma as a simple equation, Adamya sees it as a personal attack. Newton's laws? More like Newton's suggestions that she chooses to ignore. The three laws of motion might as well be three reasons why she questions her life choices at 2 AM.
+                    But every hero needs a villain, and Adamya's arch-nemesis is none other than <span style="color: #e91e63; font-weight: bold; font-size: 1.1em;">PHYSICS</span>. Oh, Physics! That cruel mistress of vectors and velocities, of tensions and torques. While others see F=ma as a simple equation, Adamya sees it as a personal attack. Newton's laws? More like Newton's suggestions that she chooses to ignore. The three laws of motion might as well be three reasons why she questions her life choices at 2 AM.
                 </p>
 
                 <div class="physics-joke">
-                    <strong>Physics Fun Fact #1:</strong> Adamya's relationship with physics is like a parallel line - they never meet, no matter how far they extend! 📐❌
+                    <strong>Physics Fun Fact #1:</strong> Adamya's relationship with physics is like a parallel line - they never meet, no matter how far they extend!
                 </div>
 
                 <div class="physics-joke">
-                    <strong>Physics Fun Fact #2:</strong> She believes projectile motion was invented specifically to ruin her day. "Why can't we just walk to the target?" she cries into the void. 🏹😭
+                    <strong>Physics Fun Fact #2:</strong> She believes projectile motion was invented specifically to ruin her day. "Why can't we just walk to the target?" she cries into the void.
                 </div>
 
                 <div class="physics-joke">
-                    <strong>Physics Fun Fact #3:</strong> According to the law of conservation of energy, energy cannot be created or destroyed. Adamya is living proof that it can, however, be converted entirely into existential dread. ⚡😰
+                    <strong>Physics Fun Fact #3:</strong> According to the law of conservation of energy, energy cannot be created or destroyed. Adamya is living proof that it can, however, be converted entirely into existential dread.
                 </div>
 
                 <p>
@@ -338,7 +637,7 @@
 
                 <div style="text-align: center; margin: 20px 0;">
                     <div class="worm-emoji">🐛</div>
-                    <p style="text-align: center; margin-top: 10px; font-size: 0.9rem; color: #999;">
+                    <p style="text-align: center; margin-top: 10px; font-size: 0.9rem; color: #888;">
                         <em>Artist's impression of Adamya during Physics class. Note the complete absence of stress (this is sarcasm).</em>
                     </p>
                 </div>
@@ -363,141 +662,178 @@
                     But oh, when the Physics teacher walks in, the atmosphere changes. The lights dim (metaphorically, the electricity bill is already too high). Birds stop singing. Somewhere in the distance, a dog howls. Adamya assumes the position: head in hands, spirit broken, wondering if it's too late to become a professional worm instead. She has calculated the exact velocity with which she would like to throw her physics textbook out the window, but alas, that would require using physics, and we simply don't do that here.
                 </p>
 
-                <p>
-                    Despite all this, Adamya persists. She is the worm that turned, the chatpati that spiced up our lives, the physics-hating, biology-loving, chemistry-tolerating future doctor who reminds us all that it's okay to struggle, it's okay to call yourself a worm sometimes, and it's definitely okay to keep a snack as your profile picture for way longer than socially acceptable.
-                </p>
-
-                <p style="text-align: center; font-weight: 600; color: #ff1493; margin-top: 30px; font-size: 1.2rem; line-height: 1.8;">
-                    In summary: Future doctor, current worm, eternal hater of F=ma, CEO of Chatpati Energy, professional highlighter wielder, and the only person who can make "I'm a worm" sound like both a cry for help and a badge of honor. We stan a legend. 🚀✨
-                </p>
-
-                <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #999;">
-                    P.S. If you're reading this, Adamya, go drink some water and touch grass. The books will wait. Probably. Okay, maybe not, but your sanity is important too! 💕
-                </p>
-            </div>
-            <button class="btn" onclick="goToPage3()">Continue to Spanish Quiz 🌮</button>
-        </div>
-
-        <!-- Page 3: Spanish Question with Growing YES -->
-        <div id="page3" class="card hidden">
-            <h1>🇪🇸 Spanish Check! 🇪🇸</h1>
-            <p style="font-size: 1.2rem;">Are you learning Spanish, Adamya?</p>
-            <p style="font-size: 0.9rem; color: #999; margin-top: 10px;">Be honest... or face the consequences 😏</p>
-            <div style="margin-top: 30px; min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                <button id="btn-yes" class="btn option-btn yes-btn" onclick="handleSpanish(true)">YES ✅</button>
-                <button id="btn-no" class="btn option-btn no-btn" onclick="handleSpanish(false)">NO ❌</button>
-            </div>
-            <div id="trick-message" style="margin-top: 20px; color: #ff1493; font-weight: 600; min-height: 30px;"></div>
-        </div>
-
-        <!-- Page 4: Spanish Quiz -->
-        <div id="page4" class="card hidden">
-            <h1>🎯 Spanish Quiz Time!</h1>
-            <div class="progress-bar">
-                <div class="progress-fill" id="progress-bar" style="width: 0%"></div>
-            </div>
-            <p>Question <span id="question-num">1</span> of 4</p>
-            
-            <div class="quiz-container">
-                <p>Translate this Spanish phrase:</p>
-                <div class="spanish-word" id="spanish-phrase">"Yo bebo agua"</div>
-                <div class="input-group">
-                    <input type="text" id="quiz-answer" placeholder="Your answer..." onkeypress="if(event.key === 'Enter') checkQuizAnswer()">
+                <div class="back-pain-box">
+                    <strong>💪 The Zero Figure Chronicles:</strong> In a plot twist that surprises absolutely no one, Adamya has recently embarked on a fitness journey to achieve the mythical "zero figure." The gym sessions are brutal, the diet is suspicious, and her back has filed an official complaint with the United Nations. "Meri kamar toot gayi!" she cries, clutching her spine like it's a rare artifact, while simultaneously googling "how to get abs in 2 days without moving." The irony of wanting a zero figure while her physics marks are also approaching zero is not lost on her. Every squat is a battle, every plank is a war, and every morning she wakes up feeling like she's been hit by a truck driven by her own ambition. The worm has evolved into a butterfly, but the butterfly has severe muscle cramps.
                 </div>
-                <button class="btn" onclick="checkQuizAnswer()">Submit Answer ✨</button>
-                <div id="quiz-error" class="error-msg hidden"></div>
-                <div id="quiz-hint" style="margin-top: 10px; color: #999; font-size: 0.9rem;"></div>
+
+                <p>
+                    Despite all this, Adamya persists. She is the worm that turned, the chatpati that spiced up our lives, the physics-hating, biology-loving, chemistry-tolerating, gym-avoiding, zero-figure-dreaming future doctor who reminds us all that it's okay to struggle, it's okay to call yourself a worm sometimes, and it's definitely okay to keep a snack as your profile picture for way longer than socially acceptable.
+                </p>
+
+                <p style="text-align: center; font-weight: 600; color: #e91e63; margin-top: 30px; font-size: 1.15rem; line-height: 1.8;">
+                    In summary: Future doctor, current worm, eternal hater of F=ma, CEO of Chatpati Energy, professional highlighter wielder, reluctant gym enthusiast, and the only person who can make "I'm a worm" sound like both a cry for help and a badge of honor. We stan a legend.
+                </p>
+
+                <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #888;">
+                    P.S. If you're reading this, Adamya, complete your daily steps right now. The books will wait. Probably. Okay, maybe not, but your sanity is important too!
+                </p>
             </div>
+            <button class="btn" onclick="goToRating()">Continue</button>
         </div>
 
-        <!-- Page 5: Rating -->
-        <div id="page5" class="card hidden">
-            <h1>⭐ Rate This Website! ⭐</h1>
-            <p>How would you rate this masterpiece dedicated to you?</p>
-            <div class="rating-container" id="rating-stars">
-                <span class="star" onclick="setRating(1)">⭐</span>
-                <span class="star" onclick="setRating(2)">⭐</span>
-                <span class="star" onclick="setRating(3)">⭐</span>
-                <span class="star" onclick="setRating(4)">⭐</span>
-                <span class="star" onclick="setRating(5)">⭐</span>
+        <!-- Page 8: Rating -->
+        <div id="page8" class="card hidden">
+            <h1>Rate This!</h1>
+            <p style="font-size: 1.2rem;">How much did you love this?</p>
+            <div class="rating-container" id="rating-stars" style="display: flex; justify-content: center; gap: 12px; margin: 30px 0; font-size: 2.5rem;">
+                <span class="star" onclick="setRating(1)" style="cursor: pointer; transition: all 0.2s; color: #ddd;">⭐</span>
+                <span class="star" onclick="setRating(2)" style="cursor: pointer; transition: all 0.2s; color: #ddd;">⭐</span>
+                <span class="star" onclick="setRating(3)" style="cursor: pointer; transition: all 0.2s; color: #ddd;">⭐</span>
+                <span class="star" onclick="setRating(4)" style="cursor: pointer; transition: all 0.2s; color: #ddd;">⭐</span>
+                <span class="star" onclick="setRating(5)" style="cursor: pointer; transition: all 0.2s; color: #ddd;">⭐</span>
             </div>
-            <p id="rating-text" style="color: #ff69b4; font-weight: 600; height: 30px;"></p>
-            <button class="btn hidden" id="submit-rating-btn" onclick="submitRating()">Submit Rating 🎉</button>
+            <p id="rating-text" style="color: #e91e63; font-weight: 600; height: 30px; font-size: 1.1rem;"></p>
+            <button class="btn hidden" id="submit-rating-btn" onclick="submitRating()">Submit Rating</button>
         </div>
 
-        <!-- Page 6: Thank You -->
-        <div id="page6" class="card hidden">
-            <h1>🌸 Thank You! 🌸</h1>
-            <div style="font-size: 4rem; margin: 20px 0;">🙏</div>
-            <p style="font-size: 1.2rem;">Thanks for visiting!</p>
+        <!-- Page 9: Final Score -->
+        <div id="page9" class="card hidden">
+            <h1>All Done!</h1>
+            <div class="final-score-card">
+                <h2>Your Final Score</h2>
+                <div class="score-number" id="final-score">0</div>
+                <div class="performance-msg" id="performance-msg">Great job!</div>
+            </div>
+            
+            <div style="margin: 30px 0; padding: 25px; background: #fff5f8; border-radius: 20px; border: 2px solid #f8bbd9;">
+                <h3 style="color: #e91e63; margin-bottom: 15px; font-size: 1.2rem;">📊 Breakdown:</h3>
+                <p id="score-breakdown" style="text-align: left; line-height: 2; color: #555;"></p>
+            </div>
+
             <div class="signature">
-                Thanking you,<br>
-                Yours lovingly,<br>
-                Modi Ji 🇮🇳
+                Made with chaos and caffeine<br>
+                by someone who knows you too well
             </div>
-            <div style="margin-top: 30px; padding: 20px; background: #ffe4e1; border-radius: 15px;">
-                <p style="color: #ff1493; font-weight: 600;">P.S. Physics still sucks, right? 😄</p>
+            
+            <div style="margin-top: 30px; padding: 20px; background: #ffe6f0; border-radius: 15px;">
+                <p style="color: #e91e63; font-weight: 600; font-size: 1.1rem;">P.S. Physics still sucks, right? 😄</p>
             </div>
         </div>
     </div>
 
     <script>
-        // Create floating flowers - reduced count
-        function createFlowers() {
-            const container = document.getElementById('flowers-container');
-            const flowers = ['🌸', '🌺', '🌷', '🌹', '🌻'];
+        // Create floating petals
+        function createPetals() {
+            const container = document.getElementById('petals-container');
+            const petals = ['🌸', '🌺', '🌷', '✿', '❀'];
             
             for (let i = 0; i < 8; i++) {
-                const flower = document.createElement('div');
-                flower.className = 'flower';
-                flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
-                flower.style.left = Math.random() * 100 + 'vw';
-                flower.style.animationDuration = (Math.random() * 10 + 15) + 's';
-                flower.style.animationDelay = Math.random() * 10 + 's';
-                flower.style.fontSize = (Math.random() * 1 + 1.5) + 'rem';
-                container.appendChild(flower);
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.innerHTML = petals[Math.floor(Math.random() * petals.length)];
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                petal.style.animationDelay = Math.random() * 10 + 's';
+                petal.style.fontSize = (Math.random() * 1 + 1.2) + 'rem';
+                container.appendChild(petal);
             }
         }
 
-        createFlowers();
+        createPetals();
 
+        // Global variables
         let currentRating = 0;
         let yesButtonScale = 1;
         let noClickCount = 0;
-        let currentQuestion = 0;
+        let totalScore = 0;
+        let quizScores = {
+            spanish: 0,
+            alice: 0,
+            gonegirl: 0
+        };
 
-        const quizQuestions = [
-            {
-                spanish: "Yo bebo agua",
-                answer: ["i drink water", "i am drinking water"],
-                hint: "It's something you do when you're thirsty 💧"
-            },
-            {
-                spanish: "Hola, ¿cómo estás?",
-                answer: ["hello how are you", "hi how are you"],
-                hint: "A common greeting 👋"
-            },
-            {
-                spanish: "Me llamo Adamya",
-                answer: ["my name is adamya", "i am called adamya", "i'm adamya"],
-                hint: "Introducing yourself 🙋‍♀️"
-            },
-            {
-                spanish: "Gracias",
-                answer: ["thank you", "thanks"],
-                hint: "You say this when someone does something nice 🙏"
-            }
+        // Quiz indices
+        let spanishIndex = 0;
+        let aliceIndex = 0;
+        let goneIndex = 0;
+
+        // Mixed Quiz Data
+        const spanishQuestions = [
+            { type: 'mcq', question: "What does 'Hola' mean?", options: ["Goodbye", "Hello", "Thank you", "Please"], correct: 1 },
+            { type: 'subjective', question: "How do you say 'I drink water' in Spanish? (Hint: Starts with 'Yo')", answers: ["yo bebo agua", "bebo agua"] },
+            { type: 'mcq', question: "What is 'Gracias'?", options: ["Sorry", "Please", "Thank you", "Excuse me"], correct: 2 },
+            { type: 'subjective', question: "Translate to Spanish: 'My name is Adamya'", answers: ["me llamo adamya", "mi nombre es adamya"] },
+            { type: 'mcq', question: "What does 'Buenos días' mean?", options: ["Good night", "Good morning", "Good afternoon", "Goodbye"], correct: 1 },
+            { type: 'subjective', question: "How do you say 'I love you' in Spanish? (Two words)", answers: ["te amo", "te quiero"] },
+            { type: 'mcq', question: "What is the Spanish word for 'book'?", options: ["Libro", "Librería", "Leer", "Letra"], correct: 0 },
+            { type: 'subjective', question: "Translate: 'How are you?' (informal)", answers: ["como estas", "¿cómo estás?", "cómo estás"] },
+            { type: 'mcq', question: "What does 'Mañana' mean?", options: ["Morning", "Tomorrow", "Today", "Yesterday"], correct: 1 },
+            { type: 'subjective', question: "How do you say 'I am tired' in Spanish? (feminine form)", answers: ["estoy cansada", "yo estoy cansada"] },
+            { type: 'mcq', question: "What is 'Perro' in English?", options: ["Cat", "Bird", "Dog", "Fish"], correct: 2 },
+            { type: 'subjective', question: "Translate to Spanish: 'Where is the bathroom?'", answers: ["donde esta el baño", "¿dónde está el baño?", "dónde está el baño"] },
+            { type: 'mcq', question: "What does 'Feliz cumpleaños' mean?", options: ["Merry Christmas", "Happy birthday", "Happy New Year", "Good luck"], correct: 1 },
+            { type: 'subjective', question: "How do you say 'Thank you very much' in Spanish?", answers: ["muchas gracias", "muchisimas gracias", "muy gracias"] },
+            { type: 'mcq', question: "What is the correct translation of 'The cat is black'?", options: ["El gato es negro", "La gata es negra", "Both are correct", "El gato está negro"], correct: 2 }
         ];
 
-        function checkItalian() {
-            const answer = document.getElementById('italian-answer').value.toLowerCase().trim();
-            const errorDiv = document.getElementById('italian-error');
+        const aliceQuestions = [
+            { type: 'mcq', question: "What is Arisu's real world profession before Borderland?", options: ["University student", "Unemployed gamer", "Office worker", "Professional athlete"], correct: 1 },
+            { type: 'subjective', question: "Which game caused the death of Arisu's friends Karube and Chota? (Hint: Number and suit)", answers: ["seven of hearts", "7 of hearts", "7 hearts"] },
+            { type: 'mcq', question: "What is the significance of the Joker card at the end of Season 2?", options: ["It represents the game master", "It's a manga reference hinting at future content", "It means the games will continue", "It shows Arisu is still dreaming"], correct: 1 },
+            { type: 'subjective', question: "In the King of Clubs game, what makes Kyuma different from other game masters? (One word)", answers: ["fair", "fairness", "honest"] },
+            { type: 'mcq', question: "What is the 'Beach' in Alice in Borderland?", options: ["A safe zone with no games", "A hotel community run by Hatter", "A secret government facility", "A code name for the final game"], correct: 1 },
+            { type: 'subjective', question: "How does the Jack of Hearts game work? (Brief answer)", answers: ["find the jack among them", "players find jack", "find jack among players", "identify jack"] },
+            { type: 'mcq', question: "What is Usagi's special skill that helps her survive?", options: ["Mountain climbing", "Archery", "Sword fighting", "Computer hacking"], correct: 0 },
+            { type: 'subjective', question: "In Season 3's 'Sacred Fortunes' game, what happens if you answer wrong?", answers: ["arrows shoot", "arrows from sky", "arrows shoot from sky", "arrows"] },
+            { type: 'mcq', question: "What is the 'Birthday Problem' answer in Alice in Borderland Season 3?", options: ["23 people", "50 people", "78 people", "183 people"], correct: 0 },
+            { type: 'subjective', question: "Who is revealed to be the Queen of Hearts? (First name)", answers: ["mira"] },
+            { type: 'mcq', question: "What must players do to extend their visa (stay alive) in Borderland?", options: ["Win games", "Find food", "Kill other players", "Solve puzzles"], correct: 0 },
+            { type: 'subjective', question: "In the Zombie Hunt game, what does the Vaccine card do?", answers: ["cures infected", "cure infected", "cures infected players", "cure"] },
+            { type: 'mcq', question: "What is Chishiya's profession in the real world?", options: ["Doctor", "Lawyer", "Police officer", "Teacher"], correct: 0 },
+            { type: 'subjective', question: "How do players return to the real world at the end of Season 2? (Brief answer)", answers: ["beat all face cards", "choose to leave", "complete face cards", "beat face cards"] },
+            { type: 'mcq', question: "What causes people to enter the Borderland according to the ending?", options: ["A meteor strike", "A terrorist attack", "A scientific experiment", "A mass suicide"], correct: 0 },
+            { type: 'subjective', question: "In the King of Diamonds game, what is Kuzuryu's philosophy? (One word)", answers: ["fairness", "fair", "equality"] },
+            { type: 'mcq', question: "What does the Four of Hearts game test?", options: ["Trust among players", "Physical strength", "Mathematical skills", "Memory"], correct: 0 },
+            { type: 'subjective', question: "Who sacrifices himself in the King of Clubs game? (First name)", answers: ["tatta"] },
+            { type: 'mcq', question: "What is the final game played by Arisu and Usagi in Season 2?", options: ["Croquet with the Queen of Hearts", "Chess with the King of Diamonds", "Poker with the Joker", "Hide and seek with the King of Spades"], correct: 0 },
+            { type: 'subjective', question: "What does Arisu mean in Japanese? (English word)", answers: ["alice"] }
+        ];
+
+        const goneQuestions = [
+            { type: 'mcq', question: "What is Amy Dunne's famous children's book series called?", options: ["Amazing Amy", "Awesome Amy", "Adventurous Amy", "Angry Amy"], correct: 0 },
+            { type: 'subjective', question: "What does Nick Dunne do for a living? (Job)", answers: ["bar owner", "owns bar", "bar"] },
+            { type: 'mcq', question: "How does Amy fake her own death?", options: ["By staging a crime scene with her blood", "By drowning in the river", "By car accident", "By burning the house"], correct: 0 },
+            { type: 'subjective', question: "Who is Desi Collings? (Relationship to Amy)", answers: ["ex boyfriend", "ex-boyfriend", "former boyfriend", "old boyfriend"] },
+            { type: 'mcq', question: "What is the 'cool girl' speech about?", options: ["Amy's rant about pretending to be the ideal woman", "Nick's description of Amy", "A book review", "A police statement"], correct: 0 },
+            { type: 'subjective', question: "How does Amy kill Desi? (Weapon/method)", answers: ["box cutter", "slits throat", "throat", "cuts throat"] },
+            { type: 'mcq', question: "What evidence does Amy plant to frame Nick?", options: ["A diary with fake entries", "A video confession", "Bloody clothes", "A murder weapon"], correct: 0 },
+            { type: 'subjective', question: "Who is Tanner Bolt? (Role)", answers: ["lawyer", "defense attorney", "attorney", "nick lawyer"] },
+            { type: 'mcq', question: "What is the significance of the Punch and Judy puppets?", options: ["They represent Amy's parents exploiting her childhood", "They are Nick's favorite toys", "They are clues in the treasure hunt", "They belong to the neighbor"], correct: 0 },
+            { type: 'subjective', question: "How does Amy return to Nick? (Her excuse)", answers: ["desi kidnapped her", "kidnapped", "claims kidnapped", "says desi kidnapped"] },
+            { type: 'mcq', question: "What game does Amy create for Nick every anniversary?", options: ["A treasure hunt with clues", "A board game", "A video game", "A scavenger hunt"], correct: 0 },
+            { type: 'subjective', question: "Who is Noelle Hawthorne? (Role)", answers: ["neighbor", "amys neighbor", "friend", "claims friend"] },
+            { type: 'mcq', question: "What does Amy do to frame Desi for her 'kidnapping'?", options: ["She seduces him then kills him, staging it as self-defense", "She steals his car", "She plants her blood in his house", "She records him confessing"], correct: 0 },
+            { type: 'subjective', question: "What is the setting of the story? (City and state)", answers: ["north carthage missouri", "north carthage", "carthage missouri", "missouri"] },
+            { type: 'mcq', question: "How does Amy manipulate the pregnancy situation?", options: ["She steals a pregnant woman's urine for the test", "She fakes a doctor's report", "She adopts a baby", "She lies about the due date"], correct: 0 },
+            { type: 'subjective', question: "What is the relationship between Nick and his twin sister Margo? (Business)", answers: ["own bar together", "bar owners", "co own bar", "business partners"] },
+            { type: 'mcq', question: "What does Amy do to the man who robbed her?", options: ["She frames him for assault", "She kills him", "She reports him to police", "She steals from him"], correct: 0 },
+            { type: 'subjective', question: "How does the book end differently from the movie? (Brief answer)", answers: ["more ambiguous", "ambiguous ending", "unclear future", "different ending"] },
+            { type: 'mcq', question: "What is Amy's parents' profession?", options: ["They are child psychologists who wrote books based on her", "They are doctors", "They are teachers", "They are writers"], correct: 0 },
+            { type: 'subjective', question: "What is the main theme of Gone Girl? (Brief answer)", answers: ["marriage as performance", "media manipulation", "fake marriage", "performance"] }
+        ];
+
+        function checkRajma() {
+            const answer = document.getElementById('rajma-answer').value.toLowerCase().trim();
+            const errorDiv = document.getElementById('rajma-error');
+            const gatekeeperMsg = document.getElementById('gatekeeper-msg');
             
-            if (answer === 'pizza') {
+            if (answer === 'rajma' || answer === 'raajma' || answer.includes('rajma')) {
                 document.getElementById('page1').classList.add('hidden');
                 document.getElementById('page2').classList.remove('hidden');
+                initEyeTracking();
             } else {
-                errorDiv.textContent = "Wrong! Try again! Hint: It's cheesy and delicious 🍕";
+                gatekeeperMsg.classList.remove('hidden');
+                errorDiv.textContent = "Wrong answer!";
                 errorDiv.classList.remove('hidden');
                 setTimeout(() => {
                     errorDiv.classList.add('hidden');
@@ -505,95 +841,359 @@
             }
         }
 
-        function goToPage3() {
-            document.getElementById('page2').classList.add('hidden');
-            document.getElementById('page3').classList.remove('hidden');
+        // Eye tracking system
+        function initEyeTracking() {
+            const yesFace = document.querySelector('.yes-face');
+            const pupils = document.querySelectorAll('.pupil');
+            
+            document.addEventListener('mousemove', (e) => {
+                const rect = yesFace.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+                const distance = Math.min(3, Math.hypot(e.clientX - centerX, e.clientY - centerY) / 20);
+                
+                const x = Math.cos(angle) * distance;
+                const y = Math.sin(angle) * distance;
+                
+                pupils.forEach(pupil => {
+                    pupil.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+                });
+            });
         }
 
         function handleSpanish(isYes) {
             const yesBtn = document.getElementById('btn-yes');
             const noBtn = document.getElementById('btn-no');
             const msgDiv = document.getElementById('trick-message');
+            const mouth = document.getElementById('yes-mouth');
+            const tearLeft = document.getElementById('tear-left');
+            const tearRight = document.getElementById('tear-right');
             
             if (!isYes) {
                 noClickCount++;
-                yesButtonScale += 0.2;
+                yesButtonScale += 0.25;
                 
-                // Grow the YES button
                 yesBtn.style.transform = `scale(${yesButtonScale})`;
-                yesBtn.style.margin = `${10 * yesButtonScale}px auto`;
                 
-                // Shrink and fade the NO button slightly
-                const noScale = Math.max(0.6, 1 - (noClickCount * 0.15));
+                const noScale = Math.max(0.5, 1 - (noClickCount * 0.12));
                 noBtn.style.transform = `scale(${noScale})`;
-                noBtn.style.opacity = Math.max(0.4, 1 - (noClickCount * 0.15));
+                noBtn.style.opacity = Math.max(0.3, 1 - (noClickCount * 0.12));
                 
-                // Funny messages
-                const messages = [
-                    "Nice try! But YES is getting bigger! 😏",
-                    "The YES button is growing... 🌱",
-                    "You can't escape Spanish! 🇪🇸",
-                    "YES is becoming unstoppable! 💪",
-                    "Just give up and click YES! 😂",
-                    "Look at that giant YES button! 👀",
-                    "Resistance is futile! 🚀"
-                ];
+                if (noClickCount === 1) {
+                    mouth.classList.add('sad');
+                    msgDiv.textContent = "Nice try! But YES is getting bigger! 😏";
+                } else if (noClickCount === 2) {
+                    mouth.classList.remove('sad');
+                    mouth.classList.add('very-sad');
+                    msgDiv.textContent = "The YES button is sad now... 🥺";
+                } else if (noClickCount >= 3) {
+                    tearLeft.classList.add('show');
+                    tearRight.classList.add('show');
+                    const messages = [
+                        "Look at those tears! 😢",
+                        "You're hurting YES's feelings! 💔",
+                        "The tears won't stop until you say YES! 💧",
+                        "Just click YES to stop the pain! 🆘",
+                        "Please... 🥺"
+                    ];
+                    msgDiv.textContent = messages[Math.min(noClickCount - 3, messages.length - 1)];
+                }
                 
-                msgDiv.textContent = messages[Math.min(noClickCount - 1, messages.length - 1)];
-                
-                // If clicked too many times, make NO button run away
-                if (noClickCount >= 5) {
+                if (noClickCount >= 4) {
                     noBtn.style.position = 'relative';
-                    noBtn.style.left = (Math.random() * 100 - 50) + 'px';
-                    noBtn.style.top = (Math.random() * 50 - 25) + 'px';
-                    msgDiv.textContent = "Catch me if you can! 😜";
+                    const maxOffset = 100;
+                    noBtn.style.left = (Math.random() * maxOffset * 2 - maxOffset) + 'px';
+                    noBtn.style.top = (Math.random() * 60 - 30) + 'px';
                 }
             } else {
-                document.getElementById('page3').classList.add('hidden');
-                document.getElementById('page4').classList.remove('hidden');
-                loadQuestion();
+                document.getElementById('page2').classList.add('hidden');
+                document.getElementById('page3').classList.remove('hidden');
             }
         }
 
-        function loadQuestion() {
-            const q = quizQuestions[currentQuestion];
-            document.getElementById('spanish-phrase').textContent = `"${q.spanish}"`;
-            document.getElementById('quiz-answer').value = '';
-            document.getElementById('question-num').textContent = currentQuestion + 1;
-            document.getElementById('quiz-hint').textContent = `Hint: ${q.hint}`;
-            document.getElementById('quiz-error').classList.add('hidden');
-            
-            // Update progress bar
-            const progress = ((currentQuestion) / quizQuestions.length) * 100;
-            document.getElementById('progress-bar').style.width = progress + '%';
+        function startSpanish() {
+            document.getElementById('page3').classList.add('hidden');
+            document.getElementById('page4').classList.remove('hidden');
+            loadSpanish();
         }
 
-        function checkQuizAnswer() {
-            const answer = document.getElementById('quiz-answer').value.toLowerCase().trim();
-            const q = quizQuestions[currentQuestion];
-            const errorDiv = document.getElementById('quiz-error');
+        // Spanish Quiz Functions
+        function loadSpanish() {
+            const q = spanishQuestions[spanishIndex];
+            document.getElementById('spanish-question').textContent = q.question;
+            document.getElementById('spanish-qnum').textContent = spanishIndex + 1;
+            document.getElementById('spanish-type').textContent = q.type === 'mcq' ? 'Multiple Choice' : 'Type your answer';
             
-            const isCorrect = q.answer.some(a => answer.includes(a));
+            const progress = ((spanishIndex) / spanishQuestions.length) * 100;
+            document.getElementById('spanish-progress').style.width = progress + '%';
+            
+            const optionsDiv = document.getElementById('spanish-options');
+            const inputDiv = document.getElementById('spanish-input-area');
+            
+            optionsDiv.innerHTML = '';
+            document.getElementById('spanish-error').classList.add('hidden');
+            document.getElementById('spanish-feedback').textContent = '';
+            document.getElementById('spanish-next').classList.add('hidden');
+            
+            if (q.type === 'mcq') {
+                optionsDiv.classList.remove('hidden');
+                inputDiv.classList.add('hidden');
+                q.options.forEach((opt, idx) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'mcq-option';
+                    btn.textContent = opt;
+                    btn.onclick = () => answerSpanishMCQ(idx, btn);
+                    optionsDiv.appendChild(btn);
+                });
+            } else {
+                optionsDiv.classList.add('hidden');
+                inputDiv.classList.remove('hidden');
+                document.getElementById('spanish-subjective').value = '';
+                document.getElementById('spanish-subjective').disabled = false;
+            }
+        }
+
+        function answerSpanishMCQ(idx, btn) {
+            const q = spanishQuestions[spanishIndex];
+            const all = document.querySelectorAll('#spanish-options .mcq-option');
+            const fb = document.getElementById('spanish-feedback');
+            
+            all.forEach(b => b.style.pointerEvents = 'none');
+            
+            if (idx === q.correct) {
+                btn.classList.add('correct');
+                fb.textContent = '✅ Correct! Amazing!';
+                fb.style.color = '#2e7d32';
+                quizScores.spanish++;
+                totalScore++;
+            } else {
+                btn.classList.add('wrong');
+                all[q.correct].classList.add('correct');
+                fb.textContent = '❌ Wrong! Correct answer highlighted.';
+                fb.style.color = '#c62828';
+            }
+            
+            document.getElementById('spanish-next').classList.remove('hidden');
+        }
+
+        function checkSpanishSubjective() {
+            const q = spanishQuestions[spanishIndex];
+            const input = document.getElementById('spanish-subjective').value.toLowerCase().trim();
+            const fb = document.getElementById('spanish-feedback');
+            
+            const isCorrect = q.answers.some(ans => input.includes(ans));
             
             if (isCorrect) {
-                currentQuestion++;
-                if (currentQuestion < quizQuestions.length) {
-                    loadQuestion();
-                } else {
-                    // Quiz complete
-                    document.getElementById('progress-bar').style.width = '100%';
-                    setTimeout(() => {
-                        document.getElementById('page4').classList.add('hidden');
-                        document.getElementById('page5').classList.remove('hidden');
-                    }, 500);
-                }
+                fb.textContent = '✅ Correct! Amazing!';
+                fb.style.color = '#2e7d32';
+                quizScores.spanish++;
+                totalScore++;
             } else {
-                errorDiv.textContent = "Not quite! Try again! 💭";
-                errorDiv.classList.remove('hidden');
-                setTimeout(() => {
-                    errorDiv.classList.add('hidden');
-                }, 3000);
+                fb.textContent = '❌ Wrong! Acceptable answers: ' + q.answers.join(', ');
+                fb.style.color = '#c62828';
             }
+            
+            document.getElementById('spanish-subjective').disabled = true;
+            document.getElementById('spanish-next').classList.remove('hidden');
+        }
+
+        function nextSpanish() {
+            spanishIndex++;
+            if (spanishIndex < spanishQuestions.length) {
+                loadSpanish();
+            } else {
+                document.getElementById('page4').classList.add('hidden');
+                document.getElementById('page5').classList.remove('hidden');
+                loadAlice();
+            }
+        }
+
+        // Alice Quiz Functions
+        function loadAlice() {
+            const q = aliceQuestions[aliceIndex];
+            document.getElementById('alice-question').textContent = q.question;
+            document.getElementById('alice-qnum').textContent = aliceIndex + 1;
+            document.getElementById('alice-type').textContent = q.type === 'mcq' ? 'Multiple Choice' : 'Type your answer';
+            
+            const progress = ((aliceIndex) / aliceQuestions.length) * 100;
+            document.getElementById('alice-progress').style.width = progress + '%';
+            
+            const optionsDiv = document.getElementById('alice-options');
+            const inputDiv = document.getElementById('alice-input-area');
+            
+            optionsDiv.innerHTML = '';
+            document.getElementById('alice-error').classList.add('hidden');
+            document.getElementById('alice-feedback').textContent = '';
+            document.getElementById('alice-next').classList.add('hidden');
+            
+            if (q.type === 'mcq') {
+                optionsDiv.classList.remove('hidden');
+                inputDiv.classList.add('hidden');
+                q.options.forEach((opt, idx) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'mcq-option';
+                    btn.textContent = opt;
+                    btn.onclick = () => answerAliceMCQ(idx, btn);
+                    optionsDiv.appendChild(btn);
+                });
+            } else {
+                optionsDiv.classList.add('hidden');
+                inputDiv.classList.remove('hidden');
+                document.getElementById('alice-subjective').value = '';
+                document.getElementById('alice-subjective').disabled = false;
+            }
+        }
+
+        function answerAliceMCQ(idx, btn) {
+            const q = aliceQuestions[aliceIndex];
+            const all = document.querySelectorAll('#alice-options .mcq-option');
+            const fb = document.getElementById('alice-feedback');
+            
+            all.forEach(b => b.style.pointerEvents = 'none');
+            
+            if (idx === q.correct) {
+                btn.classList.add('correct');
+                fb.textContent = '✅ Correct!';
+                fb.style.color = '#2e7d32';
+                quizScores.alice++;
+                totalScore++;
+            } else {
+                btn.classList.add('wrong');
+                all[q.correct].classList.add('correct');
+                fb.textContent = '❌ Wrong!';
+                fb.style.color = '#c62828';
+            }
+            
+            document.getElementById('alice-next').classList.remove('hidden');
+        }
+
+        function checkAliceSubjective() {
+            const q = aliceQuestions[aliceIndex];
+            const input = document.getElementById('alice-subjective').value.toLowerCase().trim();
+            const fb = document.getElementById('alice-feedback');
+            
+            const isCorrect = q.answers.some(ans => input.includes(ans));
+            
+            if (isCorrect) {
+                fb.textContent = '✅ Correct!';
+                fb.style.color = '#2e7d32';
+                quizScores.alice++;
+                totalScore++;
+            } else {
+                fb.textContent = '❌ Wrong! Acceptable: ' + q.answers.join(', ');
+                fb.style.color = '#c62828';
+            }
+            
+            document.getElementById('alice-subjective').disabled = true;
+            document.getElementById('alice-next').classList.remove('hidden');
+        }
+
+        function nextAlice() {
+            aliceIndex++;
+            if (aliceIndex < aliceQuestions.length) {
+                loadAlice();
+            } else {
+                document.getElementById('page5').classList.add('hidden');
+                document.getElementById('page6').classList.remove('hidden');
+                loadGone();
+            }
+        }
+
+        // Gone Girl Quiz Functions
+        function loadGone() {
+            const q = goneQuestions[goneIndex];
+            document.getElementById('gone-question').textContent = q.question;
+            document.getElementById('gone-qnum').textContent = goneIndex + 1;
+            document.getElementById('gone-type').textContent = q.type === 'mcq' ? 'Multiple Choice' : 'Type your answer';
+            
+            const progress = ((goneIndex) / goneQuestions.length) * 100;
+            document.getElementById('gone-progress').style.width = progress + '%';
+            
+            const optionsDiv = document.getElementById('gone-options');
+            const inputDiv = document.getElementById('gone-input-area');
+            
+            optionsDiv.innerHTML = '';
+            document.getElementById('gone-error').classList.add('hidden');
+            document.getElementById('gone-feedback').textContent = '';
+            document.getElementById('gone-next').classList.add('hidden');
+            
+            if (q.type === 'mcq') {
+                optionsDiv.classList.remove('hidden');
+                inputDiv.classList.add('hidden');
+                q.options.forEach((opt, idx) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'mcq-option';
+                    btn.textContent = opt;
+                    btn.onclick = () => answerGoneMCQ(idx, btn);
+                    optionsDiv.appendChild(btn);
+                });
+            } else {
+                optionsDiv.classList.add('hidden');
+                inputDiv.classList.remove('hidden');
+                document.getElementById('gone-subjective').value = '';
+                document.getElementById('gone-subjective').disabled = false;
+            }
+        }
+
+        function answerGoneMCQ(idx, btn) {
+            const q = goneQuestions[goneIndex];
+            const all = document.querySelectorAll('#gone-options .mcq-option');
+            const fb = document.getElementById('gone-feedback');
+            
+            all.forEach(b => b.style.pointerEvents = 'none');
+            
+            if (idx === q.correct) {
+                btn.classList.add('correct');
+                fb.textContent = '✅ Correct!';
+                fb.style.color = '#2e7d32';
+                quizScores.gonegirl++;
+                totalScore++;
+            } else {
+                btn.classList.add('wrong');
+                all[q.correct].classList.add('correct');
+                fb.textContent = '❌ Wrong!';
+                fb.style.color = '#c62828';
+            }
+            
+            document.getElementById('gone-next').classList.remove('hidden');
+        }
+
+        function checkGoneSubjective() {
+            const q = goneQuestions[goneIndex];
+            const input = document.getElementById('gone-subjective').value.toLowerCase().trim();
+            const fb = document.getElementById('gone-feedback');
+            
+            const isCorrect = q.answers.some(ans => input.includes(ans));
+            
+            if (isCorrect) {
+                fb.textContent = '✅ Correct!';
+                fb.style.color = '#2e7d32';
+                quizScores.gonegirl++;
+                totalScore++;
+            } else {
+                fb.textContent = '❌ Wrong! Acceptable: ' + q.answers.join(', ');
+                fb.style.color = '#c62828';
+            }
+            
+            document.getElementById('gone-subjective').disabled = true;
+            document.getElementById('gone-next').classList.remove('hidden');
+        }
+
+        function nextGone() {
+            goneIndex++;
+            if (goneIndex < goneQuestions.length) {
+                loadGone();
+            } else {
+                document.getElementById('page6').classList.add('hidden');
+                document.getElementById('page7').classList.remove('hidden');
+            }
+        }
+
+        function goToRating() {
+            document.getElementById('page7').classList.add('hidden');
+            document.getElementById('page8').classList.remove('hidden');
         }
 
         function setRating(rating) {
@@ -603,9 +1203,11 @@
             
             stars.forEach((star, index) => {
                 if (index < rating) {
-                    star.classList.add('active');
+                    star.style.color = '#ffd700';
+                    star.style.transform = 'scale(1.2)';
                 } else {
-                    star.classList.remove('active');
+                    star.style.color = '#ddd';
+                    star.style.transform = 'scale(1)';
                 }
             });
             
@@ -614,26 +1216,46 @@
         }
 
         function submitRating() {
-            console.log('Adamya rated the website:', currentRating, 'stars');
+            document.getElementById('page8').classList.add('hidden');
+            document.getElementById('page9').classList.remove('hidden');
             
-            const ratingData = {
+            document.getElementById('final-score').textContent = totalScore;
+            
+            const maxScore = spanishQuestions.length + aliceQuestions.length + goneQuestions.length;
+            const percentage = (totalScore / maxScore) * 100;
+            
+            let msg = '';
+            if (percentage >= 90) msg = '🏆 Legendary! You know everything!';
+            else if (percentage >= 70) msg = '🌟 Excellent work!';
+            else if (percentage >= 50) msg = '👍 Good job!';
+            else if (percentage >= 30) msg = '💪 Not bad, keep learning!';
+            else msg = '📚 Time to binge watch and read more!';
+            
+            document.getElementById('performance-msg').textContent = msg;
+            
+            const breakdown = `
+                • Spanish: ${quizScores.spanish}/${spanishQuestions.length}<br>
+                • Alice in Borderland: ${quizScores.alice}/${aliceQuestions.length}<br>
+                • Gone Girl: ${quizScores.gonegirl}/${goneQuestions.length}<br>
+                <strong>Total: ${totalScore}/${maxScore}</strong>
+            `;
+            document.getElementById('score-breakdown').innerHTML = breakdown;
+            
+            const data = {
                 user: 'Adamya',
                 rating: currentRating,
-                timestamp: new Date().toLocaleString(),
-                message: 'Website rating received!'
+                score: totalScore,
+                maxScore: maxScore,
+                breakdown: quizScores,
+                timestamp: new Date().toLocaleString()
             };
-            
-            localStorage.setItem('adamya_rating', JSON.stringify(ratingData));
-            alert(`Rating submitted! Adamya gave ${currentRating} stars! ⭐`);
-            
-            document.getElementById('page5').classList.add('hidden');
-            document.getElementById('page6').classList.remove('hidden');
+            localStorage.setItem('adamya_results', JSON.stringify(data));
         }
 
         window.onload = function() {
-            const stored = localStorage.getItem('adamya_rating');
+            const stored = localStorage.getItem('adamya_results');
             if (stored) {
-                console.log('Previous rating found:', JSON.parse(stored));
+                console.log('Previous results:', JSON.parse(stored));
             }
         };
     </script>
